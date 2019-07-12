@@ -24,12 +24,15 @@ $ npm install ga-accept-cookie --save
 
 ```js
 import gaAcceptCookie from 'ga-accept-cookie';
-gaAcceptCookie('UA----', {
-  storageName: 'ga_cookie_opt_in',
-  debuglog: false,
-  acceptBoxText: 'このサイトでは Google アナリティクスの Cookie（クッキー）を使用して、ユーザーのWebサイト閲覧データを記録しています。',
-  acceptBtnLabel: '同意して Cookie を受け入れる',
-  cancelBtnLabel: '同意しない'
+
+window.addEventListener('DOMContentLoaded', () => {
+  gaAcceptCookie('UA----', {
+    storageName: 'ga_cookie_opt_in',
+    debuglog: false,
+    acceptBoxText: 'このサイトでは Google アナリティクスの Cookie（クッキー）を使用して、ユーザーのWebサイト閲覧データを記録しています。',
+    acceptBtnLabel: '同意して Cookie を受け入れる',
+    cancelBtnLabel: '同意しない'
+  });
 });
 ```
 
