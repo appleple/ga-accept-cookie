@@ -5,12 +5,14 @@ interface Option {
   cancelBtnLabel: string,
   acceptBoxText: string,
   detailBtnLink: string,
-  detailBtnLabel: string
+  detailBtnLabel: string,
+  hideCancelBtn: boolean
 }
 
 const defaultOption = {
   storageName: 'ga_cookie_opt_in',
   debuglog: false,
+  hideCancelBtn: false,
   acceptBoxText: 'このサイトでは Google アナリティクスの Cookie（クッキー）を使用して、ユーザーのWebサイト閲覧データを記録しています。',
   acceptBtnLabel: '同意して Cookie を受け入れる',
   cancelBtnLabel: '同意しない',
@@ -26,7 +28,7 @@ declare global {
 
 export default (trackingCode: string, /*UA-XXXX-Y*/option: Partial<Option>) => {
   const { debuglog, storageName, acceptBtnLabel, 
-    cancelBtnLabel, acceptBoxText, 
+    cancelBtnLabel, acceptBoxText, hideCancelBtn, 
     detailBtnLink, detailBtnLabel } = 
   { ...defaultOption, ...option};
   const cookieOptin = localStorage.getItem(storageName);
@@ -52,7 +54,7 @@ export default (trackingCode: string, /*UA-XXXX-Y*/option: Partial<Option>) => {
       <p>
         ${detailBtnLink ? `<a href="${detailBtnLink}" class="module-ga-cookie-accept-btn">${detailBtnLabel}</a>` : ''}
         <button id="name-ga-cookie-accept-btn" class="module-ga-cookie-accept-btn">${acceptBtnLabel}</button> 
-        <button id="name-ga-cookie-deny-btn" class="module-ga-cookie-accept-btn module-ga-cookie-deny-btn">${cancelBtnLabel}</button>
+        ${!hideCancelBtn ? `<button id="name-ga-cookie-deny-btn" class="module-ga-cookie-accept-btn module-ga-cookie-deny-btn">${cancelBtnLabel}</button>` : ''}
       </p>
     `;
     document.body.appendChild(accept);

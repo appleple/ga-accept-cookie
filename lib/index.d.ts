@@ -6,6 +6,7 @@ interface Option {
     acceptBoxText: string;
     detailBtnLink: string;
     detailBtnLabel: string;
+    hideCancelBtn: boolean;
 }
 declare global {
     interface Window {
