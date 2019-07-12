@@ -4,6 +4,8 @@ interface Option {
     acceptBtnLabel: string;
     cancelBtnLabel: string;
     acceptBoxText: string;
+    detailBtnLink: string;
+    detailBtnLabel: string;
 }
 declare global {
     interface Window {

@@ -1,6 +1,6 @@
 {
     "name": "ga-accept-cookie",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Accept Cookie",
     "main": "lib/index.js",
     "type": "lib/index.d.ts",
