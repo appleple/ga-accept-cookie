@@ -22,6 +22,7 @@ $ npm install ga-accept-cookie --save
 
 ### 使い方
 
+```js
 import gaAcceptCookie from 'ga-accept-cookie';
 gaAcceptCookie('UA----', {
   storageName: 'ga_cookie_opt_in',
@@ -30,6 +31,7 @@ gaAcceptCookie('UA----', {
   acceptBtnLabel: '同意して Cookie を受け入れる',
   cancelBtnLabel: '同意しない'
 });
+```
 
 
 ## 注意事項
