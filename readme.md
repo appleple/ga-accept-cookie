@@ -1,6 +1,6 @@
 # ga-accept-cookie
 
-Cookie 使用の同意を得てから Google Analytics のトラッキングを有効にする JavaScript のサンプル
+Cookie 使用の同意を得てから Google Analytics のトラッキングを有効にする JavaScript
 
 ## 詳しい解説
 
