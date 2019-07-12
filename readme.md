@@ -6,6 +6,12 @@ Cookie 使用の同意を得てから Google Analytics のトラッキングを�
 
 - [Cookie 使用の同意を得てから Google Analytics のトラッキングを有効にする - WWW Watch](https://hyper-text.org/archives/2018/05/google_analytics_cookie_opt_in.shtml)
 
+### インストール
+
+```
+$ npm install ga-accept-cookie --save
+```
+
 ## 使い方
 
 - src/css/ga-cookie-opt-in.min.css をサーバの任意のディレクトリに設置します。
@@ -13,6 +19,18 @@ Cookie 使用の同意を得てから Google Analytics のトラッキングを�
 - src/js/ga-cookie-opt-in.js を body 要素内、もしくは head 要素内で読み込みます。
 - Google Analytics のトラッキングコードは公式のものを別途設置してください。タグマネージャーからの配信も可能です。
 - 必要に応じて .js ファイルや .css ファイルをカスタマイズしてください。
+
+### 使い方
+
+import gaAcceptCookie from 'ga-accept-cookie';
+gaAcceptCookie('UA----', {
+  storageName: 'ga_cookie_opt_in',
+  debuglog: false,
+  acceptBoxText: 'このサイトでは Google アナリティクスの Cookie（クッキー）を使用して、ユーザーのWebサイト閲覧データを記録しています。',
+  acceptBtnLabel: '同意して Cookie を受け入れる',
+  cancelBtnLabel: '同意しない'
+});
+
 
 ## 注意事項
 
