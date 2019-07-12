@@ -1,4 +1,4 @@
-# ga-cookie-opt-in-js
+# ga-accept-cookie
 
 Cookie 使用の同意を得てから Google Analytics のトラッキングを有効にする JavaScript のサンプル
 
