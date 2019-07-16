@@ -43,7 +43,7 @@ export default (trackingCode: string, /*UA-XXXX-Y*/option: Partial<Option>) => {
     if (debuglog) {
       console.log('ga_cookie_opt_in = null');
     }
-    window['ga-disable-UA-XXXX-Y'] = true;
+    window[`ga-disable-${trackingCode}`] = true;
     const accept = document.createElement('div');
     accept.setAttribute('class', 'module-ga-cookie-accept-bar');
     accept.setAttribute('id', 'name-ga-cookie-accept-bar');
@@ -52,7 +52,7 @@ export default (trackingCode: string, /*UA-XXXX-Y*/option: Partial<Option>) => {
         ${acceptBoxText}
       </p>
       <p>
-        ${detailBtnLink ? `<a href="${detailBtnLink}" class="module-ga-cookie-accept-btn">${detailBtnLabel}</a>` : ''}
+        ${detailBtnLink ? `<a href="${detailBtnLink}" class="module-ga-cookie-detail-btn">${detailBtnLabel}</a>` : ''}
         <button id="name-ga-cookie-accept-btn" class="module-ga-cookie-accept-btn">${acceptBtnLabel}</button> 
         ${!hideCancelBtn ? `<button id="name-ga-cookie-deny-btn" class="module-ga-cookie-accept-btn module-ga-cookie-deny-btn">${cancelBtnLabel}</button>` : ''}
       </p>
